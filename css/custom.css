@@ -200,3 +200,57 @@
     visibility: visible;
     transform: translateX(-50%) translateY(-4px);
 }
+
+/* 方案1：显示 KaTeX 的渲染结果，隐藏原始 HTML 回退 */
+.katex {
+    display: inline !important;  /* 或者 block，根据上下文 */
+}
+
+.katex-html {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+}
+
+/* 确保公式正确显示 */
+.katex-display {
+    display: block !important;
+    text-align: center !important;
+    overflow: auto hidden !important;
+    margin: 1em 0 !important;
+}
+
+/* 行内公式 */
+.katex-inline {
+    display: inline !important;
+    vertical-align: middle !important;
+}
+
+/* 全局调整 KaTeX 字体大小 */
+.katex {
+    font-size: 1.3em !important;  /* 增大 30% */
+    line-height: 1.5 !important;
+}
+
+/* 行内公式调整 */
+.katex-inline {
+    font-size: 1.25em !important;
+    vertical-align: -0.1em !important;  /* 调整对齐 */
+}
+
+/* 块级公式调整 */
+.katex-display {
+    font-size: 1.35em !important;
+    margin: 1.2em 0 !important;
+}
+
+/* 调整 KaTeX 子元素 */
+.katex * {
+    font-size: inherit !important;
+}
+
